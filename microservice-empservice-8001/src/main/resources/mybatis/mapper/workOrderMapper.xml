@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lstmontreal.cloud.dao.EmpDao">
+
+	<select id="findById" resultType="Emp" parameterType="Long">
+		SELECT empno,  lastname,   deptno,  dbname FROM emp where empno=#{id};
+	</select>
+	<select id="findAll" resultType="Emp">
+		SELECT empno,  lastname,   deptno,  dbname FROM emp ;
+	</select>
+	<insert id="addEmp" parameterType="Emp">
+		INSERT INTO emp(lastname,deptno,dbname) VALUES(#{lastName},#{deptNo},DATABASE());
+	</insert>
+
+</mapper>
+ 
+
